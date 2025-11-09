@@ -1,16 +1,14 @@
-# flutter_application_relax_app
+# 解答之書+貓貓圖片+淺草籤
 
-A new Flutter project.
+這個app有三個非常重要的功能，以至於他在整個科技業中有屹立不搖的可能：
 
-## Getting Started
+- **解答之書**：不用花錢買實體的解答之書，在心中默念一次你的問題，按下app右下角的橘色按鈕，即可享受及思考這個極具深理又奧妙的究極答案。
+- **隨機貓咪圖片**：了不讓用戶看了究極答案之後無法接受現實，此app準備了高達一萬隻貓貓來撫慰你的心靈，讓你重新獲得新生。若你對你的現實感到滿意，再加上這一萬隻貓貓在旁為你喝采，這不是天堂級別的享受了嗎？
+- **免費的淺草籤**：如果你不想使用此功能，建議你花大概一萬五飛到日本，並在神社裡花了一百日圓來抽一張籤，加上那些車油錢，可知抽一張淺草籤的成本到底多大。但是在這app裡，你只要摸貓貓的頭(點貓貓的圖片)，你就可以現場看貓貓根據你目前的處境為你編詩，編輯賞析，以及各大類別的命運，讓你不用五秒就知道你以後的人生走向。如果你不滿意，換一隻更親近的貓貓再試一次吧！
 
-This project is a starting point for a Flutter application.
+都看到這裡的，還不改快下載？？(很抱歉，這一個app只提供給android手機使用，如果你是iphone，就等我賺多一點錢讓app上架到appstore吧)
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+非常感謝**tbdavid2019**的[answerbook-api](https://github.com/tbdavid2019/answerbook-api)，讓隨機解答之書跟隨機淺草籤的功能可以實現。也感謝[**The Cat API**](https://thecatapi.com/)達成了隨機貓咪圖片的功能。
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
