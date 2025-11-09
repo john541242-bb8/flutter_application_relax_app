@@ -58,7 +58,7 @@ class _OraclePageState extends State<OraclePage> {
           ),
           Text(
             poem,
-            style: TextStyle(fontSize: 35, fontFamily: "PoemFont"),
+            style: TextStyle(fontSize: 30, fontFamily: "PoemFont"),
           ),
           Divider(indent: 60, endIndent: 60),
           Text(
@@ -73,15 +73,18 @@ class _OraclePageState extends State<OraclePage> {
               vertical: 5,
               horizontal: 20.0,
             ),
-            // height: 125,
+            height: 120,
             child: AutoSizeText(
               explain,
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: "IansuiRegular"),
+              style: TextStyle(
+                fontFamily: "IansuiRegular",
+                fontSize: 30,
+              ),
               maxLines: 6,
+              minFontSize: 1,
             ),
           ),
-
           Divider(indent: 70, endIndent: 70),
           Column(
             children: result.entries.map((entry) {
