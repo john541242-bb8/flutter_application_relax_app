@@ -40,74 +40,109 @@ class _OraclePageState extends State<OraclePage> {
           style: TextStyle(fontFamily: "ChenYuluoyan", fontSize: 40),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(height: 10),
-          CircleAvatar(
-            backgroundImage: NetworkImage(data["catimageurl"]),
-            radius: 70,
-          ),
-          Text(
-            luckType,
-            style: TextStyle(
-              fontFamily: "TWFont",
-              fontSize: 60,
-              color: Colors.red,
-            ),
-          ),
-          Text(
-            poem,
-            style: TextStyle(fontSize: 30, fontFamily: "PoemFont"),
-          ),
-          Divider(indent: 60, endIndent: 60),
-          Text(
-            "解釋：",
-            style: TextStyle(
-              fontSize: 30,
-              fontFamily: "ChenYuluoyan",
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 5,
-              horizontal: 20.0,
-            ),
-            height: 120,
-            child: AutoSizeText(
-              explain,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: "IansuiRegular",
-                fontSize: 30,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(height: 10),
+            Expanded(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(data["catimageurl"]),
+                  radius: 70,
+                ),
               ),
-              maxLines: 6,
-              minFontSize: 1,
             ),
-          ),
-          Divider(indent: 70, endIndent: 70),
-          Column(
-            children: result.entries.map((entry) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "${entry.key}：",
-                    style: TextStyle(fontFamily: "IansuiRegular"),
+            Expanded(
+              child: FittedBox(
+                child: Text(
+                  luckType,
+                  style: TextStyle(
+                    fontFamily: "TWFont",
+                    fontSize: 60,
+                    color: Colors.red,
                   ),
-                  Text(
-                    "${entry.value}",
-                    style: TextStyle(
-                      fontFamily: "IansuiRegular",
-                      color: Colors.blueGrey,
-                      fontSize: 12,
-                    ),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: FittedBox(
+                child: Text(
+                  poem,
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontFamily: "PoemFont",
                   ),
-                ],
-              );
-            }).toList(),
-          ),
-        ],
+                ),
+              ),
+            ),
+            Divider(indent: 60, endIndent: 60),
+            Expanded(
+              // flex: 1,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  "解釋：",
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontFamily: "ChenYuluoyan",
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              // flex: 1,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 5,
+                  horizontal: 20.0,
+                ),
+                height: 120,
+                child: AutoSizeText(
+                  explain,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: "IansuiRegular",
+                    fontSize: 30,
+                  ),
+                  maxLines: 6,
+                  minFontSize: 1,
+                ),
+              ),
+            ),
+            Divider(indent: 70, endIndent: 70),
+            Expanded(
+              flex: 2,
+              child: FittedBox(
+                child: Column(
+                  children: result.entries.map((entry) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "${entry.key}：",
+                          style: TextStyle(
+                            fontFamily: "IansuiRegular",
+                          ),
+                        ),
+                        Text(
+                          "${entry.value}",
+                          style: TextStyle(
+                            fontFamily: "IansuiRegular",
+                            color: Colors.blueGrey,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

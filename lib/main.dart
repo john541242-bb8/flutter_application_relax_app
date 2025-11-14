@@ -84,49 +84,61 @@ class _RelaxWidgetState extends State<RelaxWidget> {
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              constraints: BoxConstraints(maxHeight: 400),
-              margin: EdgeInsets.all(50),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                onTap: () async {
-                  if (!sameCat) {
-                    sameCat = true;
-                    await getOrcle();
-                  }
-
-                  Navigator.pushNamed(
-                    context,
-                    "OraclePage",
-                    arguments: {
-                      "catimageurl": randomImageUrl,
-                      "luckType": luckType,
-                      "poem": poem,
-                      "explain": explain,
-                      "resultMap": result,
-                    },
-                  );
-                },
-                child: Ink.image(image: NetworkImage(randomImageUrl)),
+            Expanded(
+              flex: 4,
+              child: Container(
+                constraints: BoxConstraints(maxHeight: 400),
+                margin: EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 10,
+                ),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  onTap: () async {
+                    if (!sameCat) {
+                      sameCat = true;
+                      await getOrcle();
+                    }
+                    Navigator.pushNamed(
+                      context,
+                      "OraclePage",
+                      arguments: {
+                        "catimageurl": randomImageUrl,
+                        "luckType": luckType,
+                        "poem": poem,
+                        "explain": explain,
+                        "resultMap": result,
+                      },
+                    );
+                  },
+                  child: Ink.image(
+                    image: NetworkImage(randomImageUrl),
+                  ),
+                ),
               ),
             ),
 
             Divider(indent: 50, endIndent: 50, color: Colors.orange),
-            Container(
-              margin: EdgeInsets.all(50),
-              child: Text(
-                answer,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: "ChenYuluoyan",
-                  fontSize: 40,
+            Expanded(
+              flex: 2,
+              child: Container(
+                margin: EdgeInsets.all(50),
+                child: Text(
+                  answer,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: "ChenYuluoyan",
+                    fontSize: 40,
+                  ),
                 ),
               ),
             ),
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           sameCat = false;
@@ -144,10 +156,7 @@ class _RelaxWidgetState extends State<RelaxWidget> {
         child: Icon(Icons.arrow_right_rounded, size: 50),
       ),
       bottomNavigationBar: Padding(
-        padding: EdgeInsetsGeometry.symmetric(
-          vertical: 20,
-          horizontal: 3,
-        ),
+        padding: EdgeInsetsGeometry.fromLTRB(3, 0, 0, 20),
         child: Text(
           "如果程式卡住了，嘗試重開他 --by作者 q(≧▽≦q)",
           style: TextStyle(fontSize: 10),
